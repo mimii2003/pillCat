@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeTi: View {
     var body: some View {
-       
+       //teste
         ZStack{
             NavigationStack{
                 ScrollView {
