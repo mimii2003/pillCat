@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F300ADC82AF6C3E700CD06D8 /* PillInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F300ADC72AF6C3E700CD06D8 /* PillInfo.swift */; };
+		F300ADCA2AF6C57200CD06D8 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F300ADC92AF6C57200CD06D8 /* Pill.swift */; };
 		F30F64402AE148FB005B7C6B /* Cadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F643F2AE148FA005B7C6B /* Cadastro.swift */; };
 		F30F64422AE14902005B7C6B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F64412AE14901005B7C6B /* Login.swift */; };
 		F30F64442AE14907005B7C6B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F64432AE14906005B7C6B /* Course.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F300ADC72AF6C3E700CD06D8 /* PillInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillInfo.swift; sourceTree = "<group>"; };
+		F300ADC92AF6C57200CD06D8 /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
 		F30F643F2AE148FA005B7C6B /* Cadastro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cadastro.swift; path = ../Cadastro.swift; sourceTree = "<group>"; };
 		F30F64412AE14901005B7C6B /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ../Login.swift; sourceTree = "<group>"; };
 		F30F64432AE14906005B7C6B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Course.swift; path = ../Course.swift; sourceTree = "<group>"; };
@@ -74,10 +78,12 @@
 				F30F64412AE14901005B7C6B /* Login.swift */,
 				F342FF512AD019F40016B316 /* ContentiView.swift */,
 				F30F64432AE14906005B7C6B /* Course.swift */,
+				F300ADC92AF6C57200CD06D8 /* Pill.swift */,
 				F30F644F2AE14918005B7C6B /* InitialPage.swift */,
 				F30F64452AE14909005B7C6B /* Courses.swift */,
 				F30F644D2AE14915005B7C6B /* Categorias.swift */,
 				F3549E0D2AAB985C00B3E2B9 /* HomeTi.swift */,
+				F300ADC72AF6C3E700CD06D8 /* PillInfo.swift */,
 				F3FD34482AE1513F00232431 /* TabBarView.swift */,
 				F30F644B2AE14913005B7C6B /* HomePage.swift */,
 				F30F64492AE14910005B7C6B /* DetailsCourse.swift */,
@@ -186,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F30F64442AE14907005B7C6B /* Course.swift in Sources */,
+				F300ADC82AF6C3E700CD06D8 /* PillInfo.swift in Sources */,
 				F44AB89629FB3A98001EF0A9 /* ContentView.swift in Sources */,
 				F30F64462AE1490A005B7C6B /* Courses.swift in Sources */,
 				F30F644C2AE14913005B7C6B /* HomePage.swift in Sources */,
@@ -202,6 +209,7 @@
 				F30F64502AE14918005B7C6B /* InitialPage.swift in Sources */,
 				F3549E0E2AAB985C00B3E2B9 /* HomeTi.swift in Sources */,
 				F3FD34492AE1513F00232431 /* TabBarView.swift in Sources */,
+				F300ADCA2AF6C57200CD06D8 /* Pill.swift in Sources */,
 				F3549E102AB3B5E400B3E2B9 /* AddMedication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

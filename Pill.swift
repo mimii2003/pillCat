@@ -1,18 +1,25 @@
-//
-//  Pill.swift
-//  techVerse
-//
-//  Created by Milena Soares on 04/11/23.
-//
 
-import SwiftUI
+import Foundation
 
-struct Pill: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct Pill{
+    var id = UUID()
+    var name : String
+    var periodOfTreatment : PeriodOfTreatment
+    var frequencyOfPill : FrequencyOfPill
+    var amountPerUse : AmountPerUse
+    var timeToIngest: String
+    var meal : [Int: String]
+//    var photo : String
 }
-
-#Preview {
-    Pill()
+struct PeriodOfTreatment{
+    var amount : Int
+    var timeMeasure : [Int: String]
+}
+struct FrequencyOfPill{
+    var intervalPeriod : Int
+    var timeMeasure : [Int: String]
+}
+struct AmountPerUse{
+    var amount : String
+    var pillType : [Int: String]
 }

@@ -6,7 +6,52 @@
 //
 
 import SwiftUI
-
+let pillList = [
+    Pill(
+        name: "Rivotril",
+        periodOfTreatment: PeriodOfTreatment(amount: 20, timeMeasure: [1: "Dias"]),
+        frequencyOfPill: FrequencyOfPill(intervalPeriod: 6, timeMeasure: [3: "Horas"]),
+        amountPerUse: AmountPerUse(amount: "2", pillType: [1: "Pílula(s)"]),
+        timeToIngest: "14:00",
+        meal: [1: "Antes das Refeições"]
+    ),
+    Pill(
+        name: "Medicine A",
+        periodOfTreatment: PeriodOfTreatment(amount: 4, timeMeasure: [1: "Semanas"]),
+        frequencyOfPill: FrequencyOfPill(intervalPeriod: 3, timeMeasure: [1: "Day"]),
+        amountPerUse: AmountPerUse(amount: "1.5", pillType: [1: "ampola(s)"]),
+        timeToIngest: "16:00",
+        meal: [1: "Before breakfast", 2: "Before dinner"]
+        // photo: "URL_DA_IMAGEM_AQUI"
+    ),
+    Pill(
+        name: "Vitamin B",
+        periodOfTreatment: PeriodOfTreatment(amount: 12, timeMeasure: [1: "Meses"]),
+        frequencyOfPill: FrequencyOfPill(intervalPeriod: 1, timeMeasure: [1: "Day"]),
+        amountPerUse: AmountPerUse(amount: "1", pillType: [1: "Pílula(s)"]),
+        timeToIngest: "16:30",
+        meal: [1: "After lunch"]
+        // photo: "URL_DA_IMAGEM_AQUI"
+    ),
+    Pill(
+        name: "Prescription X",
+        periodOfTreatment: PeriodOfTreatment(amount: 8, timeMeasure: [1: "Week"]),
+        frequencyOfPill: FrequencyOfPill(intervalPeriod: 2, timeMeasure: [1: "Day"]),
+        amountPerUse: AmountPerUse(amount: "0.5", pillType: [1: "comprimido(s)"]),
+        timeToIngest: "18:00",
+        meal: [1: "Before sleep"]
+        // photo: "URL_DA_IMAGEM_AQUI"
+    ),
+    Pill(
+        name: "Supplement Y",
+        periodOfTreatment: PeriodOfTreatment(amount: 3, timeMeasure: [1: "Month"]),
+        frequencyOfPill: FrequencyOfPill(intervalPeriod: 1, timeMeasure: [1: "Day"]),
+        amountPerUse: AmountPerUse(amount: "2", pillType: [1: "comprimido(s)"]),
+        timeToIngest: "20:00",
+        meal: [1: "Anytime"]
+        // photo: "URL_DA_IMAGEM_AQUI"
+    ),
+] 
 struct HomeTi: View {
     var body: some View {
        //teste
@@ -86,144 +131,80 @@ struct HomeTi: View {
                                         .frame(width: 67, height: 67)
                                         .cornerRadius(67 / 2)
                                         .overlay(
-                                            Image("ampola") //
+                                            Image("ampolinha") //
                                                 .resizable()
                                                 .frame(width: 24, height: 24)
                                         )
                                 }
                         Spacer()
                     }.padding(.bottom)
-                    HStack{
-                        Text("8:00")
-                            .fontWeight(.bold)
-                            .padding(.leading)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .font(.headline)
-                        
-                    }
-                    HStack{
-                        Image("pilulaA")
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(5)
-                            .padding([.leading, .bottom, .top]).frame(width: 125 , height:125)
-                        
-                        VStack{
-                            Text("Omega 3")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .padding(2.0)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            HStack{
-                                Text("2 Após refeições")
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .foregroundColor(.gray)
-                                    .font(.footnote)
-                                Text("Durante 7 dias")
-                                   
-                                    .foregroundColor(.gray)
-                                    .font(.footnote)
-                                    .padding(.trailing)
-                            }
-                            
-                        }
-                        .padding()
-                        
-                    }
-                    .overlay(RoundedRectangle(cornerRadius: 25)
-                        .stroke(Color.gray, lineWidth: 0.3))
-                    .padding([.trailing, .leading, .bottom])
-                    HStack{
-                        Image("comprimido")
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(5)
-                            .padding([.leading, .bottom, .top]).frame(width: 125 , height:125)
-                        
-                        VStack{
-                            Text("Comlivit")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .padding(.bottom, 2.0)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            HStack{
-                                Text("1 Após refeições")
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .foregroundColor(.gray)
-                                    .font(.footnote)
-                                Text("Durante 7 dias")
-                                   
-                                    .foregroundColor(.gray)
-                                    .font(.footnote)
-                                    .padding(.trailing)
-                            }
-                            
-                        }
-                        .padding()
-                        
-                    }
-                    .overlay(RoundedRectangle(cornerRadius: 25)
-                        .stroke(Color.gray, lineWidth: 0.3))
-                    .padding([.trailing, .leading, .bottom])
-                    HStack{
-                        Text("14:00")
-                            .fontWeight(.bold)
-                            .padding(.leading)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .font(.headline)
-                        
-                    }
-                    VStack{
-                        HStack{
-                            Image("ampolinha")
-                                .resizable()
-                                .scaledToFit()
-                                .cornerRadius(5)
-                                .padding([.leading, .bottom, .top]).frame(width: 125 , height:125)
-                            
+                    ForEach(pillList, id: \.id){
+                        pill in
+                        NavigationLink(destination: PillInfo(pill: pill)){
                             VStack{
-                                Text("Dipirona")
-                                    .font(.title3)
-                                    .fontWeight(.bold)
-                                    .padding(.bottom, 2.0)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
+
                                 HStack{
-                                    Text("1 seringa")
+                                    Text(pill.timeToIngest)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.black)
+                                        .padding(.leading)
                                         .frame(maxWidth: .infinity, alignment: .leading)
-                                        .foregroundColor(.gray)
-                                        .font(.footnote)
-                                    Text("Durante 4 dias")
+                                        .font(.headline)
                                     
-                                        .foregroundColor(.gray)
-                                        .font(.footnote)
-                                        .padding(.trailing)
+                                }
+                                VStack{
+                                    HStack{
+                                        Image(pill.amountPerUse.pillType[1] ?? "Pílula(s)")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .cornerRadius(5)
+                                            .padding([.leading, .bottom, .top]).frame(width: 125 , height:125)
+                                        
+                                        VStack{
+                                            Text(pill.name)
+                                                .font(.title3)
+                                                .fontWeight(.bold)
+                                                .padding(.bottom, 2.0)
+                                                .frame(maxWidth: .infinity, alignment: .leading)
+                                            HStack{
+                                                Text("\(pill.amountPerUse.amount) \(pill.amountPerUse.pillType[1] ?? "")")
+
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                                    .foregroundColor(.gray)
+                                                    .font(.footnote)
+                                                Text("Durante: \(pill.periodOfTreatment.amount) \(pill.periodOfTreatment.timeMeasure[1] ?? "")")
+                                                
+                                                    .foregroundColor(.gray)
+                                                    .font(.footnote)
+                                                    .padding(.trailing)
+                                            }
+                                            
+                                        }
+                                        .padding()
+                                        
+                                    }
+                                    HStack(alignment: .bottom){
+                                        Image("Alert")
+                                            .cornerRadius(5)
+                                            .padding([.leading, .bottom, .top])
+                                        Text("Você tem apenas 5 cápsulas")
+                                            .foregroundColor(.black)
+                                            .font(.body)
+                                            .padding(.bottom)
+                                    }
+                                    .padding()
+                                    .frame(width: 320, height: 41.0)
+                                    
+                                    .background(Color("cinza"))
+                                    .cornerRadius(12)
                                 }
                                 
+                                .overlay(RoundedRectangle(cornerRadius: 25)
+                                    .stroke(Color.gray, lineWidth: 0.3))
+                                .padding([.trailing, .leading, .bottom])
                             }
-                            .padding()
-                            
                         }
-                        HStack(alignment: .bottom){
-                            Image("Alert")
-                                .cornerRadius(5)
-                                .padding([.leading, .bottom, .top])
-                            Text("Você tem apenas 5 cápsulas")
-                                .foregroundColor(.black)
-                                .font(.body)
-                                .padding(.bottom)
-                        }
-                        .padding()
-                        .frame(width: 320, height: 41.0)
-                        
-                        .background(Color("cinza"))
-                            .cornerRadius(12)
                     }
-                    
-                    .overlay(RoundedRectangle(cornerRadius: 25)
-                        .stroke(Color.gray, lineWidth: 0.3))
-                    .padding([.trailing, .leading, .bottom])
-                
-
                 }
             }
         }.navigationBarBackButtonHidden(true)
